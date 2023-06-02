@@ -1,8 +1,8 @@
 # 1. Propósito
 ---
 Esta tarefa tem os seguintes propósitos:
-- Desenvolver as habilidades de criação e manipulação de estruturas de dados do tipo lista ligada ordenada (Ordered Linked List);
-- Implementar e validar os conceitos relacionados ao métodos de estruturas de dados lista ligada ordenada.
+- Desenvolver as habilidades de criação e manipulação de estruturas de dados do tipo lista ligada circular ordenada (Ordered Linked List);
+- Implementar e validar os conceitos relacionados ao métodos de estruturas de dados lista ligada circular ordenada.
 
 # 2. Orientações
 ---
@@ -22,13 +22,13 @@ Você não está obrigado a instalar o pytest e rodar os testes de validação a
 Para realizar um teste de validação da sua implementação, basta executar o seguinte comando:
 
 ```console
-$ pytest test/test_lista_ligada.py -v
+$ pytest test/test_lista_ligada_circular.py -v
 ```
 
-O pytest permite que você realize o teste sobre métodos específicos da sua estrutura de dados lista ligada. Portanto, também é válido o comando:
+O pytest permite que você realize o teste sobre métodos específicos da sua estrutura de dados lista ligada circular. Portanto, também é válido o comando:
 
 ```console
-$ pytest test/test_lista_ligada.py -k is_empty -v --no-header
+$ pytest test/test_lista_ligada_circular.py -k is_empty -v --no-header
 ```
 
 Para mais detalhes e informações sobre o framework consultar no [link](https://docs.pytest.org/en/7.3.x/contents.html).
@@ -36,7 +36,7 @@ Para mais detalhes e informações sobre o framework consultar no [link](https:/
 ## 2.2. Implementação da solução
 ---
 
-Você deverá implementar os **métodos da classe ListaLigada** no arquivo **lista_ligada.py**, os quais ainda não foram implementados. Esteja atento ao tipo de retorno de cada método, pois isso irá impactar diretamente na avaliação da sua solução após você enviar o commit com as suas implementações para o repositório remoto.
+Você deverá implementar os **métodos da classe ListaLigadaCircularOrdenada** no arquivo **lista_ligada_circular.py**, os quais ainda não foram implementados. Esteja atento ao tipo de retorno de cada método, pois isso irá impactar diretamente na avaliação da sua solução após você enviar o commit com as suas implementações para o repositório remoto.
 
 Após concluir a tarefa, você deverá realizar um **git push** para entregar a sua atividade. Você poderá realizar tantos envios ao repositório remoto quanto desejar. Entretanto, esteja atento ao prazo de entreda da atividade para não realizar a entrega com atraso, pois isso irá impactar sobre a nota da atividade. 
 
@@ -53,26 +53,28 @@ O prazo de entrega encontra-se descrito no ambiente do Google Sala de Aula da tu
 # 3. Tarefas
 ---
 
-Segue a relação de tarefas a serem observadas na implementação de cada método e a respectiva pontuação do método destacada em parênteses. Toda a tarefa valerá **20pts**, o que corresponde a **20%** da nota da segunda etapa.
+Segue a relação de tarefas a serem observadas na implementação de cada método e a respectiva pontuação do método destacada em parênteses. Toda a tarefa valerá **15pts**, o que corresponde a **15pts%** da nota da segunda etapa.
 
-- [x] Estudar e analizar os conceitos e técnicas para implementação da estrutura de dados do tipo lista ligada ordenada
-- [ ] **(1pts)** Implementar o método **is_empty()**
-  - [ ] Deve retornar um boolean True se não houver itens (Nó) na lista ligada ordenada ou False, caso contrário
-- [ ] **(1pts)** Implementar o método **is_full()**
-  - [ ] Deve retornar um boolean True se houver itens (Nó) na lista ligada ordenada ou False, caso contrário
-- [ ] **(6pts)** Implementar o método **add()**, o qual deve receber como entrada um valor para criar um nó que deverá ser inserido no início da lista ligada ordenada
+- [x] Estudar e analizar os conceitos e técnicas para implementação da estrutura de dados do tipo lista ligada circular ordenada
+- [ ] **(0pts)** Implementar o método **is_empty()**
+  - [ ] Deve retornar um boolean True se não houver itens (Nó) na lista ligada circular ordenada ou False, caso contrário
+  - OBS: A pontuação da implementação desse método está implícita na pontuação do método que faz uso do mesmo
+- [ ] **(0pts)** Implementar o método **is_full()**
+  - [ ] Deve retornar um boolean True se houver itens (Nó) na lista ligada circular ordenada ou False, caso contrário
+  - OBS: A pontuação da implementação desse método está implícita na pontuação do método que faz uso do mesmo
+- [ ] **(6pts)** Implementar o método **add()**, o qual deve receber como entrada um valor para criar um nó que deverá ser inserido no início da lista ligada circular ordenada
   - [ ] Criar um objeto Nó a partir do valor recebido pelo método
-  - [ ] Deve retornar um boolean True se conseguir inserir um item (Nó) em ordem crescente na lista ligada ordenada
-  - [ ] Caso a lista ligada ordenada tenha alcançado a sua capacidade máxima deverá lançar uma Exception com uma mensagem de erro relativo ao ocorrido, senão o item (Nó) deve ser inserido em ordem crescente na lista ligada ordenada e método deverá retornar um boolean True
-- [ ] **(6pts)** Implementar o método **remove()**, o qual deve receber como entrada um valor para ser buscado na lista ligada ordenada e remover esse item da lista, caso esteja presente 
-  - [ ] Caso a lista ligada ordenada esteja vazia deverá lançar uma Exception com uma mensagem de erro
-  - [ ] Caso o item a ser removido esteja presente na lista ligada ordenada o item (Nó) da lista ligada ordenada deverá ser removido e em seguida o método deverá retornar o valor True
-  - [ ] Caso o item a ser removido não esteja presente na lista ligada ordenada o método deverá retornar o valor False
-- [ ] **(4pts)** Implementar o método **contains()**, o qual deverá receber como entrar um valor a ser buscado e retornar o valor True ou False como resultado da busca
-  - [ ] Caso o valor a ser encontrado esteja presente na lista ligada ordenada, o método deverá retornar o valor True
-  - [ ] Caso o valor a ser encontrado não esteja presente na lista ligada ordenada, o método deverá retornar o valor False
-- [ ] **(1pts)** Implementar o método **display()**, o qual deve retornar uma lista com os valores (atributo dado) dos itens (Nó) inseridos na lista ligada ordenada
-  - [ ] Caso a lista ligada ordenada esteja vazia deverá retornar uma lista vazia []
-  - [ ] Caso a lista ligada ordenada possua um ou mais itens, o primeiro elemento da lista deve ser o valor do dado do primeiro item (Nó) na lista ligada ordenada, seguido das demais valores que compõem a lista ligada ordenada (do primeiro ao último), nessa ordem
+  - [ ] Deve retornar um boolean True se conseguir inserir um item (Nó) em ordem crescente na lista ligada circular ordenada
+  - [ ] Caso a lista ligada circular ordenada tenha alcançado a sua capacidade máxima deverá lançar uma Exception com uma mensagem de erro relativo ao ocorrido, senão o item (Nó) deve ser inserido em ordem crescente na lista ligada circular ordenada e método deverá retornar um boolean True
+- [ ] **(6pts)** Implementar o método **remove()**, o qual deve receber como entrada um valor para ser buscado na lista ligada circular ordenada e remover esse item da lista, caso esteja presente 
+  - [ ] Caso a lista ligada circular ordenada esteja vazia deverá lançar uma Exception com uma mensagem de erro
+  - [ ] Caso o item a ser removido esteja presente na lista ligada circular ordenada o item (Nó) da lista ligada circular ordenada deverá ser removido e em seguida o método deverá retornar o valor True
+  - [ ] Caso o item a ser removido não esteja presente na lista ligada circular ordenada o método deverá retornar o valor False
+- [ ] **(1pts)** Implementar o método **contains()**, o qual deverá receber como entrar um valor a ser buscado e retornar o valor True ou False como resultado da busca
+  - [ ] Caso o valor a ser encontrado esteja presente na lista ligada circular ordenada, o método deverá retornar o valor True
+  - [ ] Caso o valor a ser encontrado não esteja presente na lista ligada circular ordenada, o método deverá retornar o valor False
+- [ ] **(1pts)** Implementar o método **display()**, o qual deve retornar uma lista com os valores (atributo dado) dos itens (Nó) inseridos na lista ligada circular ordenada
+  - [ ] Caso a lista ligada circular ordenada esteja vazia deverá retornar uma lista vazia []
+  - [ ] Caso a lista ligada circular ordenada possua um ou mais itens, o primeiro elemento da lista deve ser o valor do dado do primeiro item (Nó) na lista ligada circular ordenada, seguido das demais valores que compõem a lista ligada circular ordenada (do primeiro ao último), nessa ordem
 - [ ] **(1pts)** Implementar o método **size()**, o qual deve retornar um int
-  - [ ] O método deverá retornar ZERO, caso a lista ligada ordenada esteja vazia, ou, caso possua algum item na lista ligada ordenada, o valor relativo à quantidade de itens presentes na lista ligada ordenada
+  - [ ] O método deverá retornar ZERO, caso a lista ligada circular ordenada esteja vazia, ou, caso possua algum item na lista ligada circular ordenada, o valor relativo à quantidade de itens presentes na lista ligada circular ordenada
